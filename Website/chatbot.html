@@ -51,11 +51,25 @@
         </div>
     </div>
     <script>
+        const inappropriateWords = ['badword1', 'badword2', 'badword3']; // Add words to filter
+
+        document.getElementById('message').addEventListener('keydown', function (event) {
+            if (event.key === ' ') {
+                event.preventDefault(); // Prevent default space behavior
+                sendMessage();
+            }
+        });
+
         function sendMessage() {
             const messageBox = document.getElementById('message');
             const messages = document.getElementById('chat-messages');
-            const message = messageBox.value.trim();
+            let message = messageBox.value.trim();
             if (message) {
+                if (containsInappropriateWords(message)) {
+                    alert('Your message contains inappropriate language and cannot be sent.');
+                    messageBox.value = '';
+                    return;
+                }
                 const userMessage = document.createElement('div');
                 userMessage.textContent = `You: ${message}`;
                 messages.appendChild(userMessage);
@@ -66,6 +80,10 @@
                 messages.appendChild(botMessage);
                 messages.scrollTop = messages.scrollHeight;
             }
+        }
+
+        function containsInappropriateWords(message) {
+            return inappropriateWords.some(word => message.toLowerCase().includes(word));
         }
 
         function generateResponse(input) {
