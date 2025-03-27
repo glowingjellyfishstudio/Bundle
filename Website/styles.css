@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0d1117;
+    color: #c9d1d9;
+}
+header {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: #00d8ff;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+nav {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+nav a {
+    color: #00d8ff;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+nav a:hover {
+    color: #ff007a;
+    text-shadow: 0 0 10px #ff007a, 0 0 20px #ff007a;
+}
+main {
+    padding: 3rem;
+    text-align: center;
+}
+main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00d8ff;
+    text-shadow: 0 0 10px #00d8ff, 0 0 20px #00d8ff;
+}
+main p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #c9d1d9;
+}
+footer {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: #00d8ff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Orbitron', sans-serif;
+}
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+/* Add a glowing border effect */
+nav a, footer, header h1 {
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #00d8ff, #ff007a);
+    border-image-slice: 1;
+}
