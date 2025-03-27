@@ -60,11 +60,28 @@
                 userMessage.textContent = `You: ${message}`;
                 messages.appendChild(userMessage);
                 messageBox.value = '';
-                // Simulate bot response
+                // Generate a smarter bot response
                 const botMessage = document.createElement('div');
-                botMessage.textContent = `Bot: Hello! How can I assist you?`;
+                botMessage.textContent = `Bot: ${generateResponse(message)}`;
                 messages.appendChild(botMessage);
                 messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        function generateResponse(input) {
+            input = input.toLowerCase();
+            if (input.includes('hello') || input.includes('hi')) {
+                return 'Hello! How can I assist you today?';
+            } else if (input.includes('game') || input.includes('play')) {
+                return 'We have a variety of games for you to explore! Check out our Games page.';
+            } else if (input.includes('contact')) {
+                return 'You can reach us at digitaldarkness2024@outlook.com.';
+            } else if (input.includes('about')) {
+                return 'We are passionate about bringing you the best gaming experiences. Visit our About page for more details.';
+            } else if (input.includes('help')) {
+                return 'Sure! Let me know what you need help with.';
+            } else {
+                return 'I am not sure how to respond to that. Can you please rephrase?';
             }
         }
     </script>
