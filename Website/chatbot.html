@@ -54,8 +54,8 @@
         const inappropriateWords = ['badword1', 'badword2', 'badword3']; // Add words to filter
 
         document.getElementById('message').addEventListener('keydown', function (event) {
-            if (event.key === ' ') {
-                event.preventDefault(); // Prevent default space behavior
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent default Enter behavior
                 sendMessage();
             }
         });
@@ -98,6 +98,14 @@
                 return 'We are passionate about bringing you the best gaming experiences. Visit our About page for more details.';
             } else if (input.includes('help')) {
                 return 'Sure! Let me know what you need help with.';
+            } else if (input.includes('price') || input.includes('cost')) {
+                return 'Our services are free to explore! Enjoy your time here.';
+            } else if (input.includes('thank you') || input.includes('thanks')) {
+                return 'You’re welcome! Let me know if there’s anything else I can help with.';
+            } else if (input.includes('bye') || input.includes('goodbye')) {
+                return 'Goodbye! Have a great day!';
+            } else if (input.includes('recommend') || input.includes('suggest')) {
+                return 'I recommend checking out our latest games on the Games page!';
             } else {
                 return 'I am not sure how to respond to that. Can you please rephrase?';
             }
