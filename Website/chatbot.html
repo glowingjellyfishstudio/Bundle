@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
+        #chat-container {
+            padding: 1rem;
+        }
+        #chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #00d8ff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #1f2937;
+        }
+        #chat-input {
+            display: flex;
+        }
+        #chat-input input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #00d8ff;
+            background: #1f2937;
+            color: #c9d1d9;
+        }
+        #chat-input button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: #00d8ff;
+            color: #0d1117;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+            <input type="text" id="message" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const messageBox = document.getElementById('message');
+            const messages = document.getElementById('chat-messages');
+            const message = messageBox.value.trim();
+            if (message) {
+                const userMessage = document.createElement('div');
+                userMessage.textContent = `You: ${message}`;
+                messages.appendChild(userMessage);
+                messageBox.value = '';
+                // Simulate bot response
+                const botMessage = document.createElement('div');
+                botMessage.textContent = `Bot: Hello! How can I assist you?`;
+                messages.appendChild(botMessage);
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

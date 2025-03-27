@@ -98,7 +98,19 @@
         <p>Level up your experience with our awesome gaming content. Explore, play, and conquer!</p>
     </main>
     <footer>
-        <p>&copy; 2025 Gaming Zone. All rights reserved.</p>
+        <p>&copy; 2025 Glowing Jellyfish. All rights reserved.</p>
     </footer>
+    <div id="chat-button" onclick="openChat()">
+        <img src="chat-icon.png" alt="Chat" />
+    </div>
+    <div id="chat-window" style="display: none;">
+        <iframe src="chatbot.html"></iframe>
+    </div>
+    <script>
+        function openChat() {
+            const chatWindow = document.getElementById('chat-window');
+            chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
